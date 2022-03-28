@@ -129,15 +129,16 @@ function App() {
       </div>
       <Paper>
         <div className="row-layout">
-          {list
-            ? filteredList.map((item, key) => (
-                <ExpenseIncomeComponent
-                  key={key}
-                  index={key}
-                  deleteFromList={deleteFromList}
-                />
-              ))
-            : "???"}
+          {list &&
+            // deleting creashes everything with filtered list but works with normal list?????
+            filteredList &&
+            filteredList.map((item, key) => (
+              <ExpenseIncomeComponent
+                key={key}
+                index={key}
+                deleteFromList={deleteFromList}
+              />
+            ))}
         </div>
         <Button onClick={addToList} size={"large"} fullWidth>
           Add Another
