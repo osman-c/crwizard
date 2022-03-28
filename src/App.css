@@ -1,0 +1,23 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+.row {
+  border-bottom-style: dashed;
+}
+
+.row-layout {
+  display: block;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.border-bottom {
+  border-bottom-style: groove;
+}
+
+.row-layout > * {
+  flex: 1;
+}
