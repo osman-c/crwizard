@@ -56,6 +56,9 @@ export const appSlice = createSlice({
     remove: (state, action) => {
       state.value = state.value.filter((v, i) => i != action.payload);
     },
+    update: (state, action) => {
+      state.value = action.payload;
+    },
     updateIncomeExpense: (state, action: UpdateAction) => {
       state.value[action.payload.index].isExpense = action.payload.value;
     },
@@ -74,6 +77,7 @@ export const appSlice = createSlice({
 export const {
   add,
   remove,
+  update,
   updateIncomeExpense,
   updateName,
   updateCurrency,

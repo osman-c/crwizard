@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { useAppDispatch, useAppSelector } from "./stores/reduxHooks";
-import { add, remove } from "./stores/incomeExpense";
+import { add, remove, update } from "./stores/incomeExpense";
 import { AppDispatch, store } from "./stores/store";
 import Button from "@mui/material/Button";
 
@@ -64,7 +64,10 @@ function App() {
   };
 
   const deleteFromList = (index: number) => {
-    store.dispatch(remove(index));
+    //this fixed the bug somehow
+    const temp = list.filter((l, i) => i != index);
+    setFilteredList(temp);
+    store.dispatch(update(temp));
   };
 
   const calculate = () => {
